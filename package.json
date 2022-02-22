@@ -1,0 +1,31 @@
+{
+  "name": "change-currency",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GSG-G11/Change-Currency.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GSG-G11/Change-Currency/issues"
+  },
+  "homepage": "https://github.com/GSG-G11/Change-Currency#readme",
+  "dependencies": {
+    "env2": "^2.2.2",
+    "jest": "^27.5.1",
+    "nodemon": "^2.0.15"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4"
+  }
+}

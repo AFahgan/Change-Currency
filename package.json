@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "jest",
+    "start": "node src/server.js",
+    "dev" :"nodemon src/server.js"
   },
   "repository": {
     "type": "git",
@@ -19,13 +20,14 @@
   },
   "homepage": "https://github.com/GSG-G11/Change-Currency#readme",
   "dependencies": {
-    "env2": "^2.2.2",
-    "jest": "^27.5.1",
-    "nodemon": "^2.0.15"
+ 
   },
   "devDependencies": {
     "eslint": "^8.9.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.25.4"
+    "eslint-plugin-import": "^2.25.4",
+    "env2": "^2.2.2",
+    "jest": "^27.5.1",
+    "nodemon": "^2.0.15"
   }
 }

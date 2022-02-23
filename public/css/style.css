@@ -1,5 +1,32 @@
-.search{
-  background-color: transparent;
-  padding: 20px;
+body{
+  background-color: black;
+}
+.container{
+  width: 85%;
+  margin: auto;
+}
+.title-main{
+  text-align: center;
+  color: blue;
+}
+#text{
+  width: 50%;
+  position: absolute;
+  top: 22%;
+  left: 23%;
   border-radius: 10px;
+  padding: 10px;
+outline: none;
+border: 1px solid blue;
+}
+
+.search{
+  position: absolute;
+  top: 21%;
+  right: 18%;
+  padding: 13px;
+  background-color: blue;
+  border-radius: 10px;
+  border: 1px solid blue;
+  color: #fff;
 }

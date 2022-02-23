@@ -2,11 +2,11 @@ const publicHandler = require("./publicHandler");
 const path = require("path");
 const fs = require("fs");
 const https = require("https");
-const querystring = require("querystring")
+const querystring = require("querystring");
 
 const router = (req, res) => {
   const url = req.url;
-  console.log(url);
+ 
   if (url === "/" || url === "index.html") {
     publicHandler(res, "index.html");
   } else if (url === "/css/style.css") {
@@ -30,28 +30,25 @@ const router = (req, res) => {
       data += chunk;
     });
     req.on("end", () => {
-      https.get(
-        `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${data}/usd.json`,
-        (lists) => {
-            lists.on('data', (chunk) => {
+      https
+        .get(
+          `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${data}/usd.json`,
+          (lists) => {
+            lists.on("data", (chunk) => {
               data += chunk;
             });
-            lists.on('end', () =>{
-              const dataBack = ("{" + data.split('{')[1])
-              
-              res.end(dataBack)
+            lists.on("end", () => {
+              const dataBack = "{" + data.split("{")[1];
 
+              res.end(dataBack);
             });
-          }).on("error", (err) =>{
-            console.log("Error: " + err.message);
-            res.end(err)
-
-          })
+          }
+        )
+        .on("error", (err) => {
+          console.log("Error: " + err.message);
+          res.end(err);
+        });
     });
-
-    // res.end(JSON.stringify(data))
-
-
 
   } else {
     res.writeHead(404);

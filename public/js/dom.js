@@ -17,7 +17,7 @@ const handelData = (data) => {
   title.classList.add("maincurr");
   result.appendChild(title);
   const equal = document.createElement("span");
-  equal.textContent = "Equal";
+  equal.textContent = "Equals";
   equal.classList.add("equal");
   result.appendChild(equal);
   const price = document.createElement("h3");

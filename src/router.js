@@ -8,9 +8,11 @@ const router = (req, res) => {
   } else if (url === "/css/style.css"){
    publicHandler(res ,url)
   }
-  else if (url === "/js/index.js"){
+  else if (url === "/js/index.js" || url==="/js/dom.js"){
     publicHandler(res ,url)
 
+  }else if (url === "/search"){
+    apiHandler(res,"https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/eur/usd.json")
   }
   else {
     res.writeHead(404)

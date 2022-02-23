@@ -1,5 +1,7 @@
 
 const publicHandler = require('./publicHandler');
+const path =require("path");
+const fs =require("fs")
 const router = (req, res) => {
   const  url  = req.url
   console.log(url)
@@ -12,7 +14,16 @@ const router = (req, res) => {
     publicHandler(res ,url)
 
   }else if (url === "/search"){
-    apiHandler(res,"https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/eur/usd.json")
+   const pathfile = path.join(__dirname ,".." ,"currency.json")
+   fs.readFile(pathfile , (err,data) =>{
+     if(err){
+       res.writeHead(500)
+       res.end("server error")
+     }else{
+       res.writeHead(200)
+       res.end(data)
+     }
+   })
   }
   else {
     res.writeHead(404)

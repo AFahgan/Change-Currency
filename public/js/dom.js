@@ -2,8 +2,15 @@ const text = document.querySelector("#text");
 const search = document.querySelector(".search");
 const list = document.querySelector("#data-list");
 const result = document.querySelector(".result");
+const amount = document.querySelector("#amount");
 
-text.addEventListener("keyup", function (event) {
+text.addEventListener("keyup", (event) => {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    search.click();
+  }
+});
+amount.addEventListener("keyup", (event) => {
   if (event.keyCode === 13) {
     event.preventDefault();
     search.click();
@@ -12,8 +19,10 @@ text.addEventListener("keyup", function (event) {
 
 const handelData = (data) => {
   const inputText2 = text.value;
+  const amo = amount.value;
+
   const title = document.createElement("h3");
-  title.textContent = `1 ${inputText2}`;
+  title.textContent = `${amo} ${inputText2}`;
   title.classList.add("maincurr");
   result.appendChild(title);
   const equal = document.createElement("span");
@@ -21,11 +30,10 @@ const handelData = (data) => {
   equal.classList.add("equal");
   result.appendChild(equal);
   const price = document.createElement("h3");
-  price.textContent = data.usd + ` ` + `  $ `;
+  price.textContent = amo * data.usd + ` ` + `  $ `;
   price.classList.add("maincurr");
   result.appendChild(price);
 };
-
 const searchData = (data) => {
   const inputText = text.value;
   const arr = Object.keys(data);
@@ -51,5 +59,6 @@ search.addEventListener("click", () => {
   result.textContent = "";
 
   const inputText2 = text.value;
+
   fetch("POST", "/results", handelData, inputText2);
 });

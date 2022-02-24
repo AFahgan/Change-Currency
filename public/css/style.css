@@ -22,11 +22,28 @@ body {
   left: 23%;
   border-radius: 10px;
   margin-left: 120px;
+  margin-top: 10px;
   padding: 10px;
   outline: none;
   border: 1px solid blue;
 }
+#amount {
+  width: 480px;
+ 
+  border-radius: 10px;
+  margin-left: 425px;
+  padding: 10px;
+  outline: none;
+  border: 1px solid blue;
 
+  font-size: 1.1rem;
+  font-family: inherit;
+  outline: 0;
+  color: blue;
+}
+#amount::placeholder {
+  color: blue;
+}
 .result {
   position: absolute;
   top: 60%;
@@ -62,8 +79,8 @@ body {
   font-size: 1.1rem;
   font-family: inherit;
   outline: 0;
-  border: 1px solid var(--tenne-tawny);
-  color: var(--tenne-tawny);
+  border: 1px solid blue;
+  color: blue;
   border-top-left-radius: 2rem;
   border-bottom-left-radius: 2rem;
 }
@@ -73,6 +90,8 @@ body {
 .search-btn {
   width: 42px;
   height: 43px;
+  margin-top: 10px;
+
   font-size: 1.8rem;
   background: blue;
   color: #fff;

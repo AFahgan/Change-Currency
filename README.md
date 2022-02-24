@@ -1,4 +1,5 @@
 # Change-Currency
+- [Developers](#team)
 - [Description](#Description)
 - [Links](#Links)
 - [APIs](#API)
@@ -6,6 +7,10 @@
 - [User stories](#stories)
 - [Technology I used](#Technology)
 - [Installing the project locally](#install)
+
+## ✧ **Developers** <span id='team'></span>
+- [Ayman Fahjan](https://github.com/AFahgan)
+- [Maram Ismail](https://github.com/MaramMs)
 
 ## ✧ <span id='Description'>Description</span>
 Change Currency is an website that give you the ability to know what every currency equal in united states dollar  
@@ -42,4 +47,4 @@ When user open the site he can enter any letter in the input section and the sit
 
 - `https://github.com/GSG-G11/Change-Currency.git`
 - `cd Change-Currenc`
-- `code .
+- `code .`
